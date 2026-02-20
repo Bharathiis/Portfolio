@@ -1,248 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bharathi Portfolio</title>
-
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* ===== BODY ===== */
-body{
-margin:0;
-font-family:Poppins;
-background:linear-gradient(135deg,#0f0512,#1a0a15,#2a0815);
-color:white;
-overflow-x:hidden;
-}
-
-/* ===== WELCOME SCREEN ===== */
-#welcome{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-background:radial-gradient(circle,#ff2a6d,#0f0512);
-z-index:999;
-animation:fadeIn 1s;
-}
-
-#welcome h1{
-font-size:50px;
-text-shadow:0 0 20px #ff2a6d;
-animation:pulse 2s infinite;
-}
-
-.enter-btn{
-margin-top:30px;
-padding:14px 28px;
-border:none;
-border-radius:30px;
-background:linear-gradient(45deg,#ff2a6d,#ff6b9c);
-color:white;
-font-size:18px;
-cursor:pointer;
-display:none;
-}
-
-/* ===== MAIN ===== */
-#main{
-display:none;
-padding:40px;
-}
-
-/* ===== ABOUT ===== */
-.about{
-max-width:900px;
-margin:auto;
-text-align:center;
-animation:fadeUp 1s;
-}
-
-/* ===== MENU CARDS ===== */
-.menu{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-margin-top:40px;
-}
-
-.card{
-padding:30px;
-border-radius:20px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-cursor:pointer;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 25px #ff2a6d;
-}
-
-/* ===== CONTENT ===== */
-.content{
-display:none;
-margin-top:40px;
-padding:30px;
-background:rgba(255,255,255,0.05);
-border-radius:20px;
-animation:fadeUp 0.8s;
-}
-
-/* ===== FOOTER ===== */
-footer{
-margin-top:60px;
-text-align:center;
-}
-
-/* ===== HEART ===== */
-.heart{
-position:fixed;
-font-size:20px;
-animation:floatHeart 2s linear forwards;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.1)}
-100%{transform:scale(1)}
-}
-
-@keyframes floatHeart{
-0%{opacity:1;transform:translateY(0)}
-100%{opacity:0;transform:translateY(-120px)}
-}
-
-@keyframes fadeIn{
-from{opacity:0}
-to{opacity:1}
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharathi Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<!-- ===== WELCOME ===== -->
-<section id="welcome">
-<h1>Welcome to Bharathi's Portfolio</h1>
-<button class="enter-btn" onclick="enterSite()">Click to Enter</button>
+<!-- Intro Section -->
+<div id="intro">
+  <h1 class="intro-text">Welcome to Bharathi S Portfolio</h1>
+</div>
+
+<!-- About Section -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p>
+    Mechanical Engineering student at SVCE, Tamil Nadu. 
+    Proficient in AutoCAD, PTC Creo, and MS Excel with hands-on project experience. 
+    Detail-oriented, quick learner, and passionate about mechanical design.
+  </p>
 </section>
 
-<!-- ===== MAIN ===== -->
-<section id="main">
+<!-- Interactive Menu -->
+<section id="menu" class="section">
+  <h2>Explore My Profile</h2>
+  <div class="menu-buttons">
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('work')">Work Experience</button>
+    <button onclick="showSection('certs')">Certifications</button>
+    <button onclick="showSection('langs')">Languages</button>
+  </div>
 
-<div class="about">
-<h2>About Me</h2>
-<p>
-Mechanical Engineering student passionate about Mechanical Design, CAD Modeling and Engineering Problem Solving.
-Skilled in AutoCAD, Creo, Fusion 360, Excel and C Programming.
-</p>
-</div>
+  <div id="skills" class="menu-content">
+    <h3>Technical Skills</h3>
+    <ul>
+      <li>AutoCAD</li>
+      <li>PTC Creo</li>
+      <li>Fusion 360</li>
+      <li>Microsoft Excel</li>
+      <li>Programming in C</li>
+    </ul>
+    <h3>Soft Skills</h3>
+    <ul>
+      <li>Teamwork</li>
+      <li>Problem-solving</li>
+      <li>Quick learning</li>
+    </ul>
+  </div>
 
-<!-- MENU -->
-<div class="menu">
+  <div id="work" class="menu-content">
+    <h3>Internship — Neyveli Lignite Corporation (Jan 2025)</h3>
+    <p>Reconditioning of 90 kW gearboxes in Bucket Wheel Excavators. Dismantling, inspection, reassembly, wear evaluation.</p>
+    <h3>Design Thinking Project</h3>
+    <p>Arduino-based LPG gas leakage detection system with alert mechanism.</p>
+  </div>
 
-<div class="card" onclick="showContent('skills')">Skills</div>
-<div class="card" onclick="showContent('exp')">Work Experience</div>
-<div class="card" onclick="showContent('cert')">Certification</div>
-<div class="card" onclick="showContent('lang')">Languages</div>
+  <div id="certs" class="menu-content">
+    <ul>
+      <li>NPTEL — Machinery Fault Diagnosis (IIT Kharagpur)</li>
+      <li>NPTEL — Sustainable Energy Technology (IIT Hyderabad)</li>
+      <li>Lean Startup & MVP (IIC SVCE)</li>
+      <li>Design Duel (College Symposium)</li>
+      <li>Excel Certification (Intellipaat)</li>
+      <li>GD&T Certification</li>
+    </ul>
+  </div>
 
-</div>
+  <div id="langs" class="menu-content">
+    <ul>
+      <li>English</li>
+      <li>Tamil</li>
+    </ul>
+  </div>
+</section>
 
-<!-- CONTENT SECTIONS -->
-
-<div id="skills" class="content">
-<h3>Skills</h3>
-<ul>
-<li>AutoCAD</li>
-<li>PTC Creo</li>
-<li>Fusion 360</li>
-<li>MS Excel</li>
-<li>C Programming</li>
-<li>Team Work</li>
-</ul>
-</div>
-
-<div id="exp" class="content">
-<h3>Work Experience</h3>
-<p>NLC Internship – Gearbox reconditioning</p>
-<p>Gas Leakage Detection Safety Project</p>
-</div>
-
-<div id="cert" class="content">
-<h3>Certifications</h3>
-<ul>
-<li>NPTEL Machinery Fault Diagnosis</li>
-<li>Sustainable Energy Technology</li>
-<li>GD&T</li>
-<li>Excel Certification</li>
-</ul>
-</div>
-
-<div id="lang" class="content">
-<h3>Languages</h3>
-<ul>
-<li>English</li>
-<li>Tamil</li>
-</ul>
-</div>
-
+<!-- Footer -->
 <footer>
-<p>📧 <a href="mailto:ssuriyas2006@gmail.com">ssuriyas2006@gmail.com</a></p>
-<p>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p>
+  <p>Contact Me:</p>
+  <p><a href="mailto:ssuriyas2006@gmail.com">ssuriyas2006@gmail.com</a></p>
+  <p><a href="https://www.linkedin.com/in/bharathiis" target="_blank">LinkedIn Profile</a></p>
 </footer>
-
-</section>
-
-<script>
-
-/* ===== WELCOME TIMER ===== */
-setTimeout(()=>{
-document.querySelector(".enter-btn").style.display="block";
-},2000);
-
-/* ===== ENTER SITE ===== */
-function enterSite(){
-document.getElementById("welcome").style.display="none";
-document.getElementById("main").style.display="block";
-}
-
-/* ===== SHOW CONTENT ===== */
-function showContent(id){
-document.querySelectorAll(".content").forEach(c=>c.style.display="none");
-document.getElementById(id).style.display="block";
-}
-
-/* ===== HEART CLICK ===== */
-document.addEventListener("click",e=>{
-let heart=document.createElement("div");
-heart.innerHTML="❤️";
-heart.classList.add("heart");
-heart.style.left=e.clientX+"px";
-heart.style.top=e.clientY+"px";
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),2000);
-});
-
-</script>
 
 </body>
 </html>
