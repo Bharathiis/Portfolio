@@ -1,46 +1,34 @@
-// Run after page loads
-window.addEventListener("DOMContentLoaded", () => {
-  // Intro animation: hide after 2 seconds and show About section
-  setTimeout(() => {
-    const intro = document.getElementById("intro");
-    const about = document.getElementById("about");
 
-    if (intro) intro.style.display = "none";
-    if (about) {
-      about.classList.add("visible");
-      about.scrollIntoView({ behavior: "smooth" });
-    }
-  }, 2000);
+// INTRO CLICK
+const intro = document.getElementById("intro");
+const main = document.getElementById("mainContent");
 
-  // Reveal sections on scroll
-  const sections = document.querySelectorAll(".section");
-  if (sections.length > 0) {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    sections.forEach(section => observer.observe(section));
-  }
+intro.addEventListener("click", () => {
+intro.style.display="none";
+main.style.display="block";
 });
 
-// Show menu sections with animation
-function showSection(id) {
-  const allSections = document.querySelectorAll(".menu-content");
-  allSections.forEach(sec => {
-    sec.classList.remove("visible");
-  });
+// TOGGLE FUNCTION
+function toggleSection(id){
+const el = document.getElementById(id);
 
-  const target = document.getElementById(id);
-  if (target) {
-    target.classList.add("visible");
-    target.scrollIntoView({ behavior: "smooth" });
-  }
+if(el.style.maxHeight){
+el.style.maxHeight = null;
+}else{
+el.style.maxHeight = el.scrollHeight + "px";
 }
+}
+
+// HEART CLICK EFFECT
+document.addEventListener("click",(e)=>{
+let heart = document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+
+heart.style.left = e.clientX + "px";
+heart.style.top = e.clientY + "px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),1000);
+});
