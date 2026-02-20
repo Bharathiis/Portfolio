@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bharathi S - Mechanical Engineering Portfolio">
-<title>Bharathi S | Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bharathi Mechanical Engineering Portfolio">
+    
+    <title>Bharathi Portfolio</title>
+
+    <!-- CSS LINK (IMPORTANT) -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Scroll Progress -->
+<!-- Scroll Progress Bar -->
 <div id="progressBar"></div>
 
 <!-- Intro Screen -->
@@ -18,87 +21,104 @@
     <h1>Welcome to Bharathi Portfolio</h1>
 </section>
 
-<!-- Dark Mode Toggle -->
+<!-- Theme Toggle -->
 <button id="themeToggle">🌙</button>
 
+<!-- MAIN CONTENT -->
 <main id="mainContent">
 
-<!-- About Section -->
-<section class="about-section">
-    
-    <div class="about-left glass">
-        <h2>About Me</h2>
-        <p id="typingText"></p>
-    </div>
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
 
-    <div class="about-right glass">
-        <div class="profile-placeholder">
-            Add Your Image Here
+        <!-- LEFT ABOUT BOX -->
+        <div class="about-left glass">
+            <h2>About Me</h2>
+            <p id="typingText"></p>
         </div>
-    </div>
 
-</section>
+        <!-- RIGHT IMAGE SPACE -->
+        <div class="about-right glass">
+            <div class="profile-placeholder">
+                Add Profile Image Here
+            </div>
+        </div>
 
-<!-- Interactive Sections -->
-<section class="info-sections">
+    </section>
 
-<div class="menu-card" onclick="toggleSection('skills')">Skills</div>
-<div id="skills" class="detail-panel">
-    <div class="skill">
-        <span>AutoCAD</span>
-        <div class="bar"><div style="width:90%"></div></div>
-    </div>
-    <div class="skill">
-        <span>PTC Creo</span>
-        <div class="bar"><div style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-        <span>Fusion 360</span>
-        <div class="bar"><div style="width:80%"></div></div>
-    </div>
-    <div class="skill">
-        <span>MS Excel</span>
-        <div class="bar"><div style="width:75%"></div></div>
-    </div>
-    <div class="skill">
-        <span>C Programming</span>
-        <div class="bar"><div style="width:70%"></div></div>
-    </div>
-</div>
+    <!-- INFO SECTIONS -->
+    <section class="info-sections">
 
-<div class="menu-card" onclick="toggleSection('experience')">Work Experience</div>
-<div id="experience" class="detail-panel timeline">
-    <div class="timeline-item">
-        <h3>Internship – NLC Limited</h3>
-        <p>Reconditioning of 90kW worm & planetary gearboxes.
-        Dismantling, inspection, lubrication & alignment evaluation.</p>
-    </div>
-</div>
+        <!-- SKILLS -->
+        <div class="menu-card" onclick="toggleSection('skills')">Skills</div>
+        <div id="skills" class="detail-panel">
 
-<div class="menu-card" onclick="toggleSection('certifications')">Certifications</div>
-<div id="certifications" class="detail-panel cert-grid">
-    <div class="cert-card">NPTEL – Machinery Fault Diagnosis</div>
-    <div class="cert-card">NPTEL – Sustainable Energy</div>
-    <div class="cert-card">Excel – Intellipaat</div>
-    <div class="cert-card">GD&T Certification</div>
-</div>
+            <div class="skill">
+                <span>AutoCAD</span>
+                <div class="bar"><div style="width:90%"></div></div>
+            </div>
 
-<div class="menu-card" onclick="toggleSection('languages')">Languages</div>
-<div id="languages" class="detail-panel badges">
-    <span class="badge">English</span>
-    <span class="badge">Tamil</span>
-</div>
+            <div class="skill">
+                <span>PTC Creo</span>
+                <div class="bar"><div style="width:85%"></div></div>
+            </div>
 
-</section>
+            <div class="skill">
+                <span>Fusion 360</span>
+                <div class="bar"><div style="width:80%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>MS Excel</span>
+                <div class="bar"><div style="width:75%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>C Programming</span>
+                <div class="bar"><div style="width:70%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="menu-card" onclick="toggleSection('experience')">Work Experience</div>
+        <div id="experience" class="detail-panel timeline">
+            <div class="timeline-item">
+                <h3>NLC Limited Internship</h3>
+                <p>
+                Gearbox reconditioning, dismantling, inspection,
+                lubrication checking and assembly.
+                </p>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="menu-card" onclick="toggleSection('certifications')">Certifications</div>
+        <div id="certifications" class="detail-panel cert-grid">
+            <div class="cert-card">NPTEL – Machinery Fault Diagnosis</div>
+            <div class="cert-card">NPTEL – Sustainable Energy Technology</div>
+            <div class="cert-card">Excel – Intellipaat</div>
+            <div class="cert-card">GD&T Certification</div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="menu-card" onclick="toggleSection('languages')">Languages</div>
+        <div id="languages" class="detail-panel badges">
+            <span class="badge">English</span>
+            <span class="badge">Tamil</span>
+        </div>
+
+    </section>
 
 </main>
 
-<!-- Floating Contact -->
+<!-- FLOATING CONTACT -->
 <div class="contact-float glass">
     <a href="mailto:ssuriyas2006@gmail.com">📧 Email</a>
-    <a href="https://linkedin.com/in/bharathiis" target="_blank">🔗 LinkedIn</a>
+    <a href="https://www.linkedin.com/in/bharathiis" target="_blank">🔗 LinkedIn</a>
 </div>
 
+<!-- JS LINK (IMPORTANT - KEEP AT BOTTOM) -->
 <script src="script.js"></script>
+
 </body>
 </html>
