@@ -1,140 +1,122 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #0a0f1a, #1a1f2e);
-  color: #eaeaea;
-  line-height: 1.6;
+body{
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+overflow-x:hidden;
 }
 
-/* Intro Section */
-#intro {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle, #ff4d6d, #1a1f2e);
+/* INTRO */
+#intro{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2rem;
+animation: introAnim 2s forwards;
+cursor:pointer;
 }
 
-.intro-text {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #fff;
-  animation: fadeInZoom 2s ease forwards;
+@keyframes introAnim{
+0%{opacity:0; transform:scale(.8);}
+100%{opacity:1; transform:scale(1);}
 }
 
-@keyframes fadeInZoom {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+/* MAIN */
+#mainContent{
+display:none;
+padding:40px;
 }
 
-/* Sections */
-.section {
-  padding: 80px 20px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+/* GLASS EFFECT */
+.glass{
+background: rgba(255,255,255,0.08);
+backdrop-filter: blur(10px);
+border-radius:20px;
+padding:30px;
+box-shadow:0 0 20px rgba(255,255,255,0.1);
 }
 
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* ABOUT LAYOUT */
+.about-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+min-height:80vh;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #ff4d6d;
+.profile-placeholder{
+height:250px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:2px dashed rgba(255,255,255,.3);
+border-radius:15px;
 }
 
-p {
-  max-width: 700px;
-  margin: auto;
-  color: #d0d0d0;
+/* TOGGLE SECTIONS */
+.sections{
+margin-top:50px;
 }
 
-/* Menu Buttons */
-.menu-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 30px 0;
+.toggle-card{
+margin:15px 0;
+padding:20px;
+border-radius:15px;
+background:rgba(255,255,255,.1);
+cursor:pointer;
+transition:.4s;
 }
 
-button {
-  background: linear-gradient(135deg, #ff4d6d, #7a0c2e);
-  border: none;
-  padding: 12px 24px;
-  border-radius: 30px;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+.toggle-card:hover{
+box-shadow:0 0 20px cyan;
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.5);
+.toggle-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .6s ease;
+padding-left:15px;
 }
 
-/* Menu Content */
-.menu-content {
-  display: none;
-  margin-top: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+/* FLOAT CONTACT */
+.contact-float{
+position:fixed;
+bottom:20px;
+right:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
-.menu-content.visible {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+.contact-float a{
+color:white;
+text-decoration:none;
 }
 
-.menu-content ul {
-  list-style: none;
-  padding: 0;
+/* HEART ANIMATION */
+.heart{
+position:fixed;
+font-size:20px;
+animation: heartFloat 1s forwards;
+pointer-events:none;
 }
 
-.menu-content li {
-  background: rgba(255, 255, 255, 0.05);
-  margin: 8px auto;
-  padding: 10px 15px;
-  border-radius: 10px;
-  max-width: 500px;
-  color: #fff;
-  transition: 0.3s;
+@keyframes heartFloat{
+0%{transform:translateY(0); opacity:1;}
+100%{transform:translateY(-80px); opacity:0;}
 }
 
-.menu-content li:hover {
-  background: rgba(255, 77, 109, 0.2);
-  transform: scale(1.02);
+/* RESPONSIVE */
+@media(max-width:768px){
+.about-wrapper{
+grid-template-columns:1fr;
 }
-
-/* Footer */
-footer {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  text-align: center;
-  margin-top: 40px;
-}
-
-footer a {
-  color: #ff4d6d;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: 0.3s;
-}
-
-footer a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #ff4d6d;
 }
