@@ -3,95 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bharathi Portfolio</title>
+<meta name="description" content="Bharathi S - Mechanical Engineering Portfolio">
+<title>Bharathi S | Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- INTRO SCREEN -->
+<!-- Scroll Progress -->
+<div id="progressBar"></div>
+
+<!-- Intro Screen -->
 <section id="intro">
-  <h1>Welcome to Bharathi Portfolio</h1>
+    <h1>Welcome to Bharathi Portfolio</h1>
 </section>
 
-<!-- MAIN CONTENT -->
+<!-- Dark Mode Toggle -->
+<button id="themeToggle">🌙</button>
+
 <main id="mainContent">
 
-<!-- ABOUT SECTION -->
-<section class="about-wrapper">
+<!-- About Section -->
+<section class="about-section">
+    
+    <div class="about-left glass">
+        <h2>About Me</h2>
+        <p id="typingText"></p>
+    </div>
 
-<div class="about-left glass">
-  <h2>About Me</h2>
-  <p>
-    Mechanical Engineering student with strong interest in mechanical design,
-    CAD modelling and engineering problem solving. Skilled in AutoCAD,
-    PTC Creo and Fusion 360 with project experience in Arduino-based safety
-    systems and industrial exposure from NLC internship.
-  </p>
-</div>
-
-<div class="about-right glass">
-  <!-- Add your image later -->
-  <div class="profile-placeholder">
-    Profile Image Space
-  </div>
-</div>
+    <div class="about-right glass">
+        <div class="profile-placeholder">
+            Add Your Image Here
+        </div>
+    </div>
 
 </section>
 
-<!-- INTERACTIVE SECTIONS -->
-<section class="sections">
+<!-- Interactive Sections -->
+<section class="info-sections">
 
-<div class="toggle-card" onclick="toggleSection('skills')">
-  Skills
-</div>
-<div id="skills" class="toggle-content">
-  <ul>
-    <li>AutoCAD</li>
-    <li>PTC Creo</li>
-    <li>Fusion 360</li>
-    <li>MS Excel</li>
-    <li>C Programming</li>
-  </ul>
-</div>
-
-<div class="toggle-card" onclick="toggleSection('exp')">
-  Work Experience
-</div>
-<div id="exp" class="toggle-content">
-  <p>
-    Internship – NLC Limited  
-    Gearbox reconditioning, inspection, dismantling & assembly.
-  </p>
-</div>
-
-<div class="toggle-card" onclick="toggleSection('cert')">
-  Certifications
-</div>
-<div id="cert" class="toggle-content">
-  <ul>
-    <li>NPTEL – Machinery Fault Diagnosis</li>
-    <li>NPTEL – Sustainable Energy Technology</li>
-    <li>Excel – Intellipaat</li>
-    <li>GD&T Certification</li>
-  </ul>
+<div class="menu-card" onclick="toggleSection('skills')">Skills</div>
+<div id="skills" class="detail-panel">
+    <div class="skill">
+        <span>AutoCAD</span>
+        <div class="bar"><div style="width:90%"></div></div>
+    </div>
+    <div class="skill">
+        <span>PTC Creo</span>
+        <div class="bar"><div style="width:85%"></div></div>
+    </div>
+    <div class="skill">
+        <span>Fusion 360</span>
+        <div class="bar"><div style="width:80%"></div></div>
+    </div>
+    <div class="skill">
+        <span>MS Excel</span>
+        <div class="bar"><div style="width:75%"></div></div>
+    </div>
+    <div class="skill">
+        <span>C Programming</span>
+        <div class="bar"><div style="width:70%"></div></div>
+    </div>
 </div>
 
-<div class="toggle-card" onclick="toggleSection('lang')">
-  Languages
+<div class="menu-card" onclick="toggleSection('experience')">Work Experience</div>
+<div id="experience" class="detail-panel timeline">
+    <div class="timeline-item">
+        <h3>Internship – NLC Limited</h3>
+        <p>Reconditioning of 90kW worm & planetary gearboxes.
+        Dismantling, inspection, lubrication & alignment evaluation.</p>
+    </div>
 </div>
-<div id="lang" class="toggle-content">
-  <p>English, Tamil</p>
+
+<div class="menu-card" onclick="toggleSection('certifications')">Certifications</div>
+<div id="certifications" class="detail-panel cert-grid">
+    <div class="cert-card">NPTEL – Machinery Fault Diagnosis</div>
+    <div class="cert-card">NPTEL – Sustainable Energy</div>
+    <div class="cert-card">Excel – Intellipaat</div>
+    <div class="cert-card">GD&T Certification</div>
+</div>
+
+<div class="menu-card" onclick="toggleSection('languages')">Languages</div>
+<div id="languages" class="detail-panel badges">
+    <span class="badge">English</span>
+    <span class="badge">Tamil</span>
 </div>
 
 </section>
 
 </main>
 
-<!-- FLOATING CONTACT -->
+<!-- Floating Contact -->
 <div class="contact-float glass">
-  <a href="mailto:ssuriyas2006@gmail.com">Email</a>
-  <a href="https://linkedin.com/in/bharathiis" target="_blank">LinkedIn</a>
+    <a href="mailto:ssuriyas2006@gmail.com">📧 Email</a>
+    <a href="https://linkedin.com/in/bharathiis" target="_blank">🔗 LinkedIn</a>
 </div>
 
 <script src="script.js"></script>
