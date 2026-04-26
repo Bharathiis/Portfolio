@@ -111,6 +111,11 @@ body.light .menu-card{
 background:rgba(0,0,0,0.05);
 }
 
+/* 🔥 IMPORTANT FIX (removes bottom content) */
+.hidden-content{
+display:none;
+}
+
 /* MODAL */
 .modal-overlay{
 position:fixed;
@@ -118,14 +123,13 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(6px);
+background:black; /* no blur → clean */
 display:flex;
 justify-content:center;
 align-items:center;
 opacity:0;
 visibility:hidden;
-transition:0.3s ease;
+transition:0.3s;
 z-index:999;
 }
 
@@ -140,15 +144,9 @@ max-width:750px;
 max-height:80vh;
 overflow-y:auto;
 padding:30px;
+border-radius:20px;
 position:relative;
-transform:translateY(40px) scale(0.95);
-opacity:0;
-transition:0.3s ease;
-}
-
-.modal-overlay.active .modal-content{
-transform:translateY(0) scale(1);
-opacity:1;
+background:#111;
 }
 
 .close-btn{
@@ -176,7 +174,6 @@ padding-left:20px;
 
 .modal-content li{
 margin-bottom:6px;
-line-height:1.5;
 }
 
 /* CONTACT FLOAT */
@@ -195,11 +192,6 @@ color:white;
 padding:10px 15px;
 border-radius:10px;
 background:rgba(255,255,255,0.1);
-transition:0.3s;
-}
-
-.contact-float a:hover{
-background:rgba(0,255,255,0.3);
 }
 
 body.light .contact-float a{
@@ -218,7 +210,6 @@ cursor:pointer;
 font-size:18px;
 background:rgba(255,255,255,0.1);
 color:white;
-backdrop-filter:blur(8px);
 z-index:1000;
 }
 
